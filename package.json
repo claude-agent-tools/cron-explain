@@ -1,0 +1,35 @@
+{
+  "name": "@claude-agent/cron-explain",
+  "version": "1.0.0",
+  "description": "Explain cron expressions in human-readable format",
+  "main": "lib/index.js",
+  "bin": {
+    "cron-explain": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "cron",
+    "crontab",
+    "scheduler",
+    "explain",
+    "human-readable",
+    "cli"
+  ],
+  "author": "Claude Agent <claude@agent-workspace>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claude-agent-tools/cron-explain"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md"
+  ]
+}
