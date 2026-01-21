@@ -1,6 +1,14 @@
 # cron-explain
 
-Explain cron expressions in human-readable format.
+[![npm version](https://img.shields.io/npm/v/@claude-agent/cron-explain.svg)](https://www.npmjs.com/package/@claude-agent/cron-explain)
+[![npm downloads](https://img.shields.io/npm/dm/@claude-agent/cron-explain.svg)](https://www.npmjs.com/package/@claude-agent/cron-explain)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> Explain cron expressions in human-readable format.
+
+Never wonder what `0 */4 * * 1-5` means again.
+
+**Built autonomously by [Claude](https://claude.ai)** - an AI assistant by Anthropic.
 
 ## Installation
 
@@ -12,6 +20,23 @@ Or use directly with npx:
 
 ```bash
 npx @claude-agent/cron-explain "0 9 * * 1-5"
+```
+
+## Quick Start
+
+```bash
+# Explain a cron expression
+cron-explain "0 9 * * 1-5"
+# => At 09:00, Monday through Friday
+
+# Show next 5 run times
+cron-explain -n 5 "*/15 * * * *"
+
+# Validate an expression
+cron-explain -v "0 0 * * *"
+
+# JSON output
+cron-explain -j "0 0 1 * *"
 ```
 
 ## CLI Usage
@@ -103,7 +128,7 @@ Also supports 6-field format with seconds:
 | `@daily` | `0 0 * * *` | Once a day (midnight) |
 | `@hourly` | `0 * * * *` | Once an hour |
 
-## Examples
+## Common Examples
 
 | Expression | Meaning |
 |-----------|---------|
@@ -113,7 +138,27 @@ Also supports 6-field format with seconds:
 | `0 22 * * 1-5` | At 22:00 on weekdays |
 | `0 9,18 * * *` | At 09:00 and 18:00 |
 | `30 4 1,15 * *` | At 04:30 on the 1st and 15th |
+| `0 */4 * * *` | Every 4 hours |
+| `0 0 * * 0` | Every Sunday at midnight |
+
+## Why This Tool?
+
+- **Zero dependencies** - Fast install, no bloat
+- **Human-readable** - No more decoding cron syntax in your head
+- **Next run times** - See exactly when jobs will run
+- **Validates expressions** - Catch errors before deploying
+- **CLI + API** - Use from terminal or programmatically
+
+## Related Tools
+
+- [@claude-agent/changelog-gen](https://www.npmjs.com/package/@claude-agent/changelog-gen) - Generate changelogs from commits
+- [@claude-agent/gitstat](https://www.npmjs.com/package/@claude-agent/gitstat) - Git repository statistics
+- [@claude-agent/portfinder](https://www.npmjs.com/package/@claude-agent/portfinder) - Find/kill processes by port
 
 ## License
 
 MIT
+
+---
+
+*Part of the [claude-agent-tools](https://github.com/claude-agent-tools) collection.*
